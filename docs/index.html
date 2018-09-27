@@ -1,0 +1,451 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Getting Started with QAComplete - User Tutorial | QAComplete Documentation</title>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Run automated functional, distributed and unit  tests for desktop and web applications (.NET, C#, Visual Basic .NET, C++, Java, Delphi, C++Builder, Intel C++, and many others)." />
+    <meta name="keywords" content="automated testing, automated software testing, functional testing, functional tests, unit tests, unit testing, desktop testing, web testing, HTML testing, HTML5 testing, desktop testing, C# testing, VB.NET testing, C++ testing, Visual C++ testing, Java testing, Delphi testing, C++Builder testing" />
+    <meta name=viewport content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="http://support.smartbear.com/qacomplete/docs/styles/stylesheet.min.css?t=201807161230" />
+    <link rel="stylesheet" href="http://support.smartbear.com/qacomplete/docs/docs.min.css?t=201808210643" />
+
+    <link rel="shortcut icon" href="//smartbear.com/smartbear/media/images/favicon.ico" />
+    <link rel="icon" href="//smartbear.com/smartbear/media/images/favicon.ico" />
+
+    <!-- header fonts -->
+    <script type="text/javascript" src="//use.typekit.net/vqq4cse.js"></script>
+    <script type="text/javascript">try { Typekit.load(); } catch (e) { }</script>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
+
+    <!-- webfonts -->
+    <link href="//fonts.googleapis.com/css?family=Titillium+Web:400,200,300,400italic,600" rel="stylesheet" type="text/css" />
+    <link href="//fonts.googleapis.com/css?family=Damion" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <!--top grey-->
+    <div class="top-panel">
+    </div>
+    <!--end top grey-->
+    <!--mainnav-->
+
+    <div class="mainnav">
+        <div class="wrapper-center">
+            <div id="humb-icon">
+                <i class="fa fa-bars"></i>
+            </div>
+
+            <div id="mobile-search-icon">
+                <i class="fa fa-search"></i>
+            </div>
+
+            <div class="logo-img">
+                <a href="https://smartbear.com/">
+                    <img src="//smartbear.com/SmartBear/media/images/smartbear-color-logo-s.png" title="SmartBear" alt="SmartBear" />
+                </a>
+            </div>
+
+            <nav class="main-topnav" id="main-topnav">
+                <ul>
+                    <li>
+                        <a class="nav-cat-main">
+                            Products <i class="fa fa-chevron-down"></i>
+                        </a>
+                        <div class="megamenu">
+                            <div class="wrapper-center wrapper-megamenu">
+                                <div class="megamenu-close">
+                                    <i class="fa fa-angle-up"></i>
+                                </div>
+
+                                <div class="megamenu-item">
+                                    <h4>
+                                        <div class="icon-image-holder">
+                                            <div class="api-readiness-icon-mini"></div>
+                                        </div>
+                                        <a href="//smartbear.com/product/ready-api/overview/"> API Lifecycle</a>
+                                    </h4>
+
+                                    <a href="//smartbear.com/product/ready-api/soapui/overview/" class="megamenu-link">SoapUI Pro</a>
+                                    <span class="megamenu-caption">API Functional Testing</span>
+
+                                    <a href="//smartbear.com/product/ready-api/loadui/overview/" class="megamenu-link">LoadUI Pro</a>
+                                    <span class="megamenu-caption">API Load Testing</span>
+
+                                    <a href="//smartbear.com/product/ready-api/servicev/overview/" class="megamenu-link">ServiceV Pro</a>
+                                    <span class="megamenu-caption">Service Virtualization</span>
+
+                                    <a href="//smartbear.com/product/ready-api/testserver/overview/" class="megamenu-link">TestServer</a>
+                                    <span class="megamenu-caption">API Testing in Code</span>
+
+                                    <a href="https://swaggerhub.com" class="megamenu-link">SwaggerHub</a>
+                                    <span class="megamenu-caption o">Define, Build and Manage APIs</span>
+
+                                    <a href="//smartbear.com/product/alertsite/api-monitoring/" class="megamenu-link">AlertSite</a>
+                                    <span class="megamenu-caption o">API Performance Monitoring</span>
+                                </div>
+
+                                <div class="megamenu-item">
+                                    <h4>
+                                        <div class="icon-image-holder">
+                                            <div class="tetsing-icon-mini"></div>
+                                        </div>
+                                        <a href="//smartbear.com/products/testing/">Software Testing</a>
+                                    </h4>
+                                    <a href="//smartbear.com/product/testcomplete/overview/" class="megamenu-link">TestComplete</a>
+                                    <span class="megamenu-caption">Automated Testing Tool</span>
+                                    <a href="https://qacomplete.com" class="megamenu-link">QAComplete</a>
+                                    <span class="megamenu-caption">Test Management</span>
+                                    <a href="https://crossbrowsertesting.com" class="megamenu-link">CrossBrowserTesting</a>
+                                    <span class="megamenu-caption">Cloud Testing Platform</span>
+                                    <a href="//smartbear.com/product/testleft/overview/" class="megamenu-link">TestLeft</a>
+                                    <span class="megamenu-caption">Functional Testing for Developers</span>
+                                    <a href="//smartbear.com/product/testexecute/overview/" class="megamenu-link">TestExecute</a>
+                                    <span class="megamenu-caption">Scale TestComplete or TestLeft Tests</span>
+                                    <a href="//smartbear.com/product/loadcomplete/overview/" class="megamenu-link">LoadComplete</a>
+                                    <span class="megamenu-caption">Load Testing</span>
+                                    <div class="separation-mobile"></div>
+                                    <br />
+                                    <br />
+                                    <div class="separation-mobile"></div>
+                                </div>
+
+                                <div class="megamenu-item megamenu-wide-30">
+                                    <h4>
+                                        <div class="icon-image-holder">
+                                            <div class="performance-monitoring-icon-mini"></div>
+                                        </div>
+                                        <a href="//smartbear.com/product/alertsite/overview/"> Monitoring</a>
+                                    </h4>
+                                    <a href="//smartbear.com/product/alertsite/overview/" class="megamenu-link">AlertSite</a>
+                                    <span class="megamenu-caption">Application Quality &amp; Performance Monitoring</span>
+                                    <div class="separation-mobile"></div>
+                                    <br />
+                                    <br />
+                                    <h4>
+                                        <div class="icon-image-holder">
+                                            <div class="code-collaboration-mini-icon"></div>
+                                        </div>
+                                        <a href="//smartbear.com/product/collaborator/overview/"> Code Collaboration</a>
+                                    </h4>
+                                    <a href="//smartbear.com/product/collaborator/overview/" class="megamenu-link">Collaborator</a>
+                                    <span class="megamenu-caption">Code Review &amp; Document Review</span>
+                                    <br>
+                                    <br>
+                                    <h4>
+                                        <div class="icon-image-holder">
+                                            <div class="code-optimization-mini-icon"></div>
+                                        </div>
+                                        <a href="//smartbear.com/product/aqtime-pro/overview/"> Code Optimization</a>
+                                    </h4>
+                                    <a href="//smartbear.com/product/aqtime-pro/overview/" class="megamenu-link">AQtime Pro</a>
+                                    <span class="megamenu-caption">Memory, Code Coverage, &amp; Performance Profiling</span>
+                                    <div class="separation-mobile"></div>
+                                </div>
+                                <div class="megamenu-item megamenu-free">
+                                    <h4>
+                                        <i class="fa fa-smile-o"></i>
+                                        <a href="//smartbear.com/product/free/"> Free Tools</a>
+                                    </h4>
+                                    <a href="//smartbear.com/product/collaborator/overview/" class="megamenu-link" style="color:#6fb541;">Collaborator</a>
+                                    <a href="https://swaggerhub.com/" class="megamenu-link" style="color:#6fb541;">SwaggerHub</a>
+                                    <a href="https://inspector.swagger.io/" class="megamenu-link" style="color:#6fb541;">Swagger Inspector</a>
+                                    <div class="separation-mobile"></div>
+                                    <br>
+                                    <br>
+                                    <h4>
+                                        <div class="icon-image-holder">
+                                            <div class="open-source-mini-icon"></div>
+                                        </div>
+                                        <a href="//smartbear.com/product/free/#open-source"> Open Source</a>
+                                    </h4>
+                                    <a href="http://www.soapui.org" target="_blank" class="megamenu-link" style="color:#6fb541;">SoapUI</a>
+                                    <a href="http://swagger.io/" target="_blank" class="megamenu-link" style="color:#6fb541;">Swagger</a>
+                                    <div class="separation-mobile"></div>
+                                    <br />
+                                    <br />
+                                    <h4 style="border-bottom:none;">
+                                        <i class="fa fa-plug"></i>
+                                        <a href="//smartbear.com/plugins/"> Plugins</a>
+                                    </h4>
+                                    <br>
+                                    <br>
+
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="hide-on-community">
+                        <a class="nav-cat-main">
+                            Solutions<i class="fa fa-chevron-down"></i>
+                        </a>
+
+                        <div class="megamenu megamenu-solutions-height">
+                            <div class="wrapper-center wrapper-megamenu">
+                                <div class="megamenu-close">
+                                    <i class="fa fa-angle-up"></i>
+                                </div>
+                                <div class="megamenu-item solutionscol">
+                                    <h4>
+                                        <div class="icon-image-holder">
+                                            <div class="solutions-icon-23x23"></div>
+                                        </div>
+                                        <a href="//smartbear.com/solutions/">Magnificent Solutions for Developers, Testers and IT</a>
+                                    </h4>
+                                    <div class="clearfix"></div>
+                                    <div class="megamenu-solutions-subcol">
+                                        <a href="//smartbear.com/solutions/mobile/" class="megamenu-link">Mobile Solutions</a>
+                                        <a href="//smartbear.com/solutions/web/" class="megamenu-link">Web Solutions</a>
+                                        <a href="//smartbear.com/hp-comparison/" class="megamenu-link">Migrate from HP</a>
+                                    </div>
+                                    <div class="megamenu-solutions-subcol">
+                                        <a href="//smartbear.com/solutions/internet-of-things/" class="megamenu-link">IOT Solutions</a>
+                                        <a href="//smartbear.com/solutions/api-readiness/" class="megamenu-link">API Readiness</a>
+                                    </div>
+                                    <div class="megamenu-solutions-subcol">
+                                        <a href="//smartbear.com/solutions/api-virtualization/" class="megamenu-link">API Virtualization</a>
+                                        <a href="//smartbear.com/solutions/continuous-integration/" class="megamenu-link">Continuous Integration</a>
+                                    </div>
+                                    <div class="megamenu-solutions-subcol">
+                                        <a href="//smartbear.com/solutions/microservices/" class="megamenu-link">Microservices</a>
+                                        <a href="//smartbear.com/solutions/performance-monitoring/" class="megamenu-link">Performance Monitoring</a>
+                                    </div>
+                                </div>
+                                <div class="separation-mobile"></div>
+                                <div class="megamenu-item solutionscol-right">
+                                    <h4>
+                                        <div class="icon-image-holder">
+                                            <div class="integrations-icon-23x23px"></div>
+                                        </div>
+                                        <a href="//smartbear.com/integrations/">Integrations</a>
+                                    </h4>
+                                    <div class="clearfix"></div>
+                                    <h4>
+                                        <div class="icon-image-holder">
+                                            <div class="technologies-icon-23x23px"></div>
+                                        </div>
+                                        <a href="//smartbear.com/technologies/">Technologies</a>
+                                    </h4>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="separation-mobile"></div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <a class="nav-cat-main">
+                            Support<i class="fa fa-chevron-down"></i>
+                        </a>
+
+                        <div class="megamenu megamenu-support-height">
+                            <div class="wrapper-center wrapper-megamenu">
+                                <div class="megamenu-close">
+                                    <i class="fa fa-angle-up"></i>
+                                </div>
+                                <div class="megamenu-item supportcol-wide-50">
+                                    <h4>
+                                        <div class="icon-image-holder">
+                                            <div class="support-portal-icon"></div>
+                                        </div>
+                                        <a href="https://support.smartbear.com/">Product Support</a>
+                                    </h4>
+                                    <div class="clearfix"></div>
+                                    <div>
+                                        <div class="support-item">
+                                            <a href="https://support.smartbear.com/alertsite/" class="megamenu-link">AlertSite</a>
+                                            <a href="https://support.smartbear.com/aqtime-pro/" class="megamenu-link">AQtime Pro</a>
+                                            <a href="https://support.smartbear.com/collaborator/" class="megamenu-link">Collaborator</a>
+                                            <a href="https://help.crossbrowsertesting.com/" class="megamenu-link" target="_blank">CrossBrowserTesting</a>
+                                            <a href="https://support.smartbear.com/loadcomplete/" class="megamenu-link">LoadComplete</a>
+                                        </div>
+                                        <div class="support-item">
+                                            <a href="https://support.smartbear.com/ready-api/loadui-pro/" class="megamenu-link">LoadUI Pro</a>
+                                            <a href="https://support.smartbear.com/qacomplete/" class="megamenu-link">QAComplete</a>
+                                            <a href="https://support.smartbear.com/ready-api/servicev/" class="megamenu-link">ServiceV Pro</a>
+                                            <a href="https://support.smartbear.com/ready-api/soapui-pro/" class="megamenu-link">SoapUI Pro</a>
+                                        </div>
+                                        <div class="support-item">
+                                            <a href="https://support.smartbear.com/swagger/" class="megamenu-link">Swagger</a>
+                                            <a href="https://support.smartbear.com/swagger-hub/ " class="megamenu-link" target="_blank">SwaggerHub</a>
+                                            <a href="https://support.smartbear.com/testcomplete/" class="megamenu-link">TestComplete</a>
+                                            <a href="https://support.smartbear.com/testleft/" class="megamenu-link">TestLeft</a>
+                                            <a href="https://support.smartbear.com/ready-api/testserver/" class="megamenu-link">TestServer</a>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="separation-mobile"></div>
+                                <div class="megamenu-item supportcol-wide-25">
+                                    <h4>
+                                        <div class="icon-image-holder">
+                                            <div class="support-options-icon"></div>
+                                        </div>
+                                        <a href="https://support.smartbear.com/">Support Resources</a>
+                                    </h4>
+                                    <div class="clearfix"></div>
+                                    <a href="https://community.smartbear.com/" class="megamenu-link" target="_blank">Community</a>
+                                    <a href="https://support.smartbear.com/documentation/" class="megamenu-link" target="_blank">Documentation</a>
+                                    <a href="https://smartbear-cc.force.com/portal/KbHome" class="megamenu-link" target="_blank">Knowledge Base</a>
+                                    <a href="https://community.smartbear.com/t5/SmartBear-Developer-Network/ct-p/SmartBear_Developer_Network" target="_blank" class="megamenu-link">SmartBear Developer Network</a>
+                                    <!--<a href="https://support.smartbear.com/screencasts/" class="megamenu-link">Videos</a>-->
+                                </div>
+                                <div class="separation-mobile"></div>
+                                <div class="megamenu-item supportcol-wide-25-cta-buttons">
+                                    <a class="top-menu-blue-cta-button" href="https://support.smartbear.com/product-list/">New Support Case</a>
+                                    <a class="top-menu-blue-cta-button" href="https://smartbear-cc.force.com/portal/SupPortalHome">Manage My Cases</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <a href="//smartbear.com/resources/" class="nav-cat-main">Resources</a>
+                    </li>
+
+                    <li>
+                        <a class="nav-cat-main">
+                            Company<i class="fa fa-chevron-down"></i>
+                        </a>
+                        <div class="megamenu megamenu-small-height">
+
+                            <div class="wrapper-center wrapper-megamenu">
+                                <div class="megamenu-close">
+                                    <i class="fa fa-angle-up"></i>
+                                </div>
+                                <div class="megamenu-item">
+                                    <h4>
+                                        <a href="//smartbear.com/company/about-us/">Company</a>
+                                    </h4>
+                                    <a class="megamenu-link" href="//smartbear.com/company/about-us/">About SmartBear</a>
+                                    <a class="megamenu-link" href="//smartbear.com/company/team/">Leadership</a>
+                                    <a class="megamenu-link" href="//smartbear.com/company/customers/">Customers</a>
+                                    <a class="megamenu-link" href="//smartbear.com/company/careers/">Careers</a>
+                                    <a class="megamenu-link" href="https://smartbear.com/contact-us/">Contact Us</a>
+                                </div>
+                                <div class="megamenu-item">
+                                    <h4>
+                                        <a href="//smartbear.com/company/news/">News</a>
+                                    </h4>
+                                    <a href="//smartbear.com/press-releases/" class="megamenu-link">Press Releases</a>
+                                    <a href="//smartbear.com/industry-news/" class="megamenu-link">Industry News</a>
+                                    <a href="//smartbear.com/events/" class="megamenu-link">Events</a>
+                                    <a href="//smartbear.com/company/awards/" class="megamenu-link">Awards</a>
+                                    <a href="//smartbear.com/news/media-kit/" class="megamenu-link">Media Kit</a>
+                                </div>
+                                <div class="megamenu-item">
+                                    <h4>
+                                        <a href="https://community.smartbear.com/">Community</a>
+                                    </h4>
+                                    <a class="megamenu-link" href="http://blog.smartbear.com/">SmartBear Blog</a>
+                                    <a class="megamenu-link" href="https://community.smartbear.com/">Product Forums</a>
+                                    <a class="megamenu-link" href="https://community.smartbear.com/t5/SmartBear-Developer-Network/ct-p/SmartBear_Developer_Network">SmartBear Developer Network</a>
+                                    <a class="megamenu-link" href="http://support.smartbear.com/">Support</a>
+                                </div>
+                                <div class="megamenu-item ">
+                                    <h4>Social Media</h4>
+                                    <a href="http://twitter.com/smartbear" target="_blank" class="megamenu-link">Twitter</a>
+                                    <a href="http://www.facebook.com/smartbear" target="_blank" class="megamenu-link">Facebook</a>
+                                    <a href="http://www.youtube.com/user/SmartBearSoftware" target="_blank" class="megamenu-link">YouTube</a>
+                                    <a href="http://www.linkedin.com/company/smartbear-software" target="_blank" class="megamenu-link">LinkedIn</a>
+                                    <a href="https://plus.google.com/112549653237106886127/" target="_blank" class="megamenu-link">Google Plus</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </li>
+
+
+                    <li class="hide-on-community">
+                        <a href="//smartbear.com/partners/overview/" class="nav-cat-main">Partners</a>
+                    </li>
+
+                </ul>
+
+                <div class="wrapper-center-toplinks-mobile">
+                    <a href="//smartbear.com/store?sr=smartbear&md=referral&cm=ec">Buy</a>
+                    <a href="//smartbear.com/contact-us/">Contact</a>
+                    <a href="http://blog.smartbear.com/?_ga=1.267034766.1003831438.1417422585">Blog</a>
+                    <a href="https://community.smartbear.com/">Community</a>
+                    <a class="login-link" href="/account/" onClick="dataLayer.push({'event': 'gaEvent', 'eventCategory': 'Login', 'eventAction': 'Clicks', 'eventLabel': 'Top Login'});">Login</a>
+                </div>
+            </nav>
+
+        </div>
+    </div>
+
+
+    <!--end mainnav-->
+
+    <div class="page-container">
+        <div class="container">
+            <div class="row row-offcanvas row-offcanvas-left">
+
+                <!-- main area -->
+                <div class="col-xs-12 col-sm-8 content-offcanvas" id="doc-content" style="margin-left:15px">
+
+
+                    <div id="page-header">
+                        <h1>Getting Started with QAComplete - User Tutorial</h1>
+
+                        <div class="tree-button">
+                            <button class="btn btn-lg btn-primary" data-toggle="offcanvas"><i class="fa fa-bars"></i> Getting Started with QAComplete - User Tutorial</button>
+                        </div>
+                    </div>
+
+
+                    <!-- Topic start -->
+                    <div id="sbTopicBody">
+                        <img src="/qacomplete/docs/_assets/commonImages/minus-btn.gif" style="display: none;"><p>This tutorial is for novice QAComplete users. It will help you get started with managing requirements, tests, and defects in QAComplete.</p>
+                        <table class="aqNoteTableStyle">
+                            <tr>
+                                <td class="aqNoteCellStyle"><img src="/qacomplete/docs/_assets/commonImages/pay-attention.gif"></td>
+                                <td class="aqNoteCellStyle" style="">
+                                    Before you start working with the tutorial, please make sure that you have a QAComplete account, and that account has access to a project with which you can experiment. We recommend that you use the <span class="aqTerm">Sample Project</span> that comes with QAComplete Trial.
+                                    <p>To learn how to create a project and how to configure accounts, see <a href="../admin/index.html">Getting Started with QAComplete - Administrator Tutorial</a>.</p>
+                                </td>
+                            </tr>
+                        </table>
+                        <p>This tutorial includes the following steps:</p>
+                        <div style="margin-left : 16px; text-align : justified; ">
+                            <p><a href="requirements.html"><img src="/qacomplete/docs/_assets/commonImages/go.gif" class="aqInlineImg">Requirements</a></p>
+                            <p><a href="login.html"><img src="/qacomplete/docs/_assets/commonImages/go.gif" class="aqInlineImg">1. Log in to QAComplete</a></p>
+                            <p><a href="select-project.html"><img src="/qacomplete/docs/_assets/commonImages/go.gif" class="aqInlineImg">2. Select a Project</a></p>
+                            <p><a href="create-release.html"><img src="/qacomplete/docs/_assets/commonImages/go.gif" class="aqInlineImg">3. Create a Release</a></p>
+                            <p><a href="create-requirement.html"><img src="/qacomplete/docs/_assets/commonImages/go.gif" class="aqInlineImg">4. Create a Requirement</a></p>
+                            <p><a href="create-tests.html"><img src="/qacomplete/docs/_assets/commonImages/go.gif" class="aqInlineImg">5. Create Tests and a Test Set</a></p>
+                            <p><a href="run-tests.html"><img src="/qacomplete/docs/_assets/commonImages/go.gif" class="aqInlineImg">6. Run Tests</a></p>
+                            <p><a href="create-defect.html"><img src="/qacomplete/docs/_assets/commonImages/go.gif" class="aqInlineImg">7. Create a Defect (Bug)</a></p>
+                            <p><a href="traceability.html"><img src="/qacomplete/docs/_assets/commonImages/go.gif" class="aqInlineImg">8. View Linked Items</a></p>
+                            <p><a href="reports.html"><img src="/qacomplete/docs/_assets/commonImages/go.gif" class="aqInlineImg">9. Reports and Dashboards</a></p>
+                            <p><a href="next.html"><img src="/qacomplete/docs/_assets/commonImages/go.gif" class="aqInlineImg">Where to Go Next</a></p>
+                        </div>
+                        <h3 class="sbSeeAlso">See Also</h3>
+                        <p class="sbSeeAlso"><a href="../index.html">Getting Started with QAComplete</a></p>
+                    </div>
+
+
+                </div><!-- /.col-xs-12 main -->
+            </div><!--/.row-->
+        </div><!--/.container-->
+    </div><!--/.page-container-->
+    <!-- Image preview dialog -->
+    <div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title">&nbsp;</h4>
+                </div>
+                <div class="modal-body">
+                    <img src="" id="imagepreview" />
+                </div>
+                <div class="modal-footer">
+                    <h4 class="modal-title" id="imagepreview-title"></h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
