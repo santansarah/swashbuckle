@@ -1,2 +1,4 @@
-# swashbuckle
-Generate Swagger 2.0 Specification from an existing .NET API using Swashbuckle
+# Swashbuckle Tutorial for .NET APIs
+[Generate Swagger/OpenAPI Documentation from an existing .NET API](https://santansarah.github.io/swashbuckle/) 
+
+https://santansarah.github.io/swashbuckle/
