@@ -1,87 +1,106 @@
-﻿<!DOCTYPE html>
+﻿<!DOCTYPE html>  
 <html>
 <head>
-    <title>Getting Started with QAComplete - User Tutorial | QAComplete Documentation</title>
+    <title>Embed Swagger UI into Existing .NET APIs</title>
 
     <!-- webfonts -->
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;lang=en" />
 
+
     <style>
    body{
-   font-family: 'Open Sans',serif;
+   font-family: 'Open Sans',sans-serif;
+   
 }
         h1 {
-
+            font-size: 28px;
+            font-family: 'Open Sans',sans-serif;
+            font-weight:600;
         }
 
         h2 {
             color: #0071b8;
+            font-size: 28px;
         }
+        h3 {
+            font-weight:400;
+            font-size:22px;
+        }
+        img {
+  display: block;
+  margin:   auto;
+  padding: 15px 0 15px 0 !important;
+  
+}
     </style>
 
 </head>
 <body>
-    <div class="article-featured">
-        <div class="row">
-            <div class="col-md-6">
-                <h1 class="post-title">TestLeft 10-Min Demo</h1>
-            </div>
-            <div class="col-md-12">
-                <h3 class="post-description">Easily Generate Object Models with TestLeft from your Desktop</h3>
-            </div>
-        </div>
-&nbsp;<p><a href="https://smartbear.com/product/testleft/overview/">TestLeft</a> is an automated UI test framework for creating and running functional tests for Windows desktop and Web applications from <a href="https://smartbear.com/">Smartbear</a>. TestLeft allows you to easily generate object models in as little as two-clicks. This <a href="https://smartbear.wistia.com/medias/996vuoj32k">step-by-step guide</a> will help automatically generate a domain specific language for your application from your desktop.</p>
+    <div style="margin: auto; width:60%">
+                <h1>Embed Swagger UI into Existing .NET APIs</h1>
+                <h3>Use Swashbuckle to automatically generate a valid Swagger 2.0 Specification and integrate Swagger UI into your existing .NET APIs.</h3>
+         <img src="images/screen6.png"  style="width:600px"/>
+<p><a href="https://github.com/domaindrivendev/Swashbuckle" target="_blank">Swashbuckle</a> is an open source library that allows you to embed <a href="https://swagger.io/tools/swagger-ui/" target="_blank">Swagger UI</a> into your existing .NET APIs. </p>
 
-        <p>In order to do this demo, please download a free <a href="https://smartbear.com/product/testleft/free-trial/">30-day trial</a> of TestLeft.</p>
+<p>Available as a NuGet Package, the Swashbuckle installation embeds <a href="https://github.com/swagger-api/swagger-ui" target="_blank">swagger-ui</a> directly into your project, allowing you to access your Swagger documentation from your API's URL (e.g., http://localhost:50200/swagger/ui/index). It also includes a configuration class to customize your Swagger UI settings.</p>
 
-        <h2>Step 1: Open your webpage.</h2>
+<p>Once it's installed, Swashbuckle will automatically generate a valid Swagger 2.0 Specification based on your existing routes, controllers, models, and custom settings. Swagger UI uses this specification to generate your API's documentation, offering a rich set of interactive features with very little maintenance. </p>
 
-        <p>For this demo, you can download a <a href="http://secure.smartbearsoftware.com/samples/testcomplete11/WebOrders/login.aspx">sample web order form</a>.</p>
+<p>This guide will help you to install Swashbuckle on an existing .NET API hosted in IIS and configure Swagger UI to include your existing XML comments. For a complete list of Swashbuckle features and advanced installation options for self-hosted APIs, refer to the <a href="https://github.com/domaindrivendev/Swashbuckle" target="_blank">Swashbuckle README</a> on GitHub.com. </p>
 
-        <h2>Step 2: Launch TestLeft UI Spy.</h2>
 
-        <p>TestLeft can be accessed through an IDE or it can be accessed through your desktop with the TestLeft UI Spy.</p>
+        <h2>Step 1: Install Swashbuckle from NuGet.</h2>
+                <p>To install the latest stable version of Swashbuckle from the NuGet Package Console, type the following:</p>
+    <code>Install-Package Swashbuckle</code>
+    <p>To install Swashbuckle from the NuGet Package Manager:</p>
+    <ol style="list-style-type:lower-alpha;"><li>Open your existing .NET API in Visual Studio. From the Solution Explorer, right click your Project name and select <strong>Manage NuGet Packages...</strong>
+<br /><img src="images/screen1a.png" style="width:600px" /></li>
+        <li>From the NuGet Package manager, click <strong>Browse</strong>, and search for <em>swashbuckle</em>. Select the latest stable version, then click Install. Your installation progress will be displayed in the Output Window. Visual Studio may prompt you with an installation summary. Click OK to continue.<br />
+                    <img src="images/screen2a.png"  style="width:600px"/>
+        </li>
+                </ol>
+       <p>That's it! Once Swashbuckle&#39;s installed, you're ready to browse your Swagger UI documentation.</p>
 
-        <p style="text-align: center;">&nbsp;</p>
+        <h2>Step 2: Browse your new Swagger UI documentation.</h2>
+    To browse your Swagger UI documentation:
+    <ol style="list-style-type:lower-alpha;">
+        <li>Build and run your API.</li>
+        <li>From your browser, navigate to http://[<em>localhost:50200</em>]<strong>/swagger/ui/index</strong>.
+ </li>
+        </ol> 
+                On your documentation home page, all of your endpoints should be listed and grouped by each of your controller(s). Every time you re-build your API, your Swagger UI documentation will automatically reflect any changes.<br />
+        <img src="images/screen6.png"  style="width:600px"/>
+    <h2>Step 3: Add XML comments.</h2>
+    To include XML comments in your Swagger UI documentation, you'll need to enable your API&#39;s XML Output settings and update the Swashbuckle configuration class.<br />
+    <ol style="list-style-type:lower-alpha;">
+         <li>Right click your API Project from the Solution Explorer and select Properties. <br />
+        <img src="images/screen9.png"  style="width:600px"/>
+        </li>
+        <li>From the Properties window, click <strong>Build</strong>, and locate the Output section. Make sure that <strong>XML documentation file</strong> is checked, and copy your XML file path to a text file for later use.<br />
+        <img src="images/screen10.png"  style="width:600px"/>
+        </li>
+        <li>Next, you&#39;ll need to update the Swashbuckle configuration settings and create a method to read your XML file. Open SwaggerConfig.cs from your App_Start folder and uncomment the following line:<br /><br />
+        <code>c.IncludeXmlComments(GetXmlCommentsPath());</code><br /><br />
+        <img src="images/screen8.png"  style="width:600px"/></li>
+       
+        <li>Paste the following code as a new method in SwaggerConfig.cs, appending the .BaseDirectory with your XML file path (e.g., @&quot;bin\PetStore.xml&quot;) :<br /><br />
+            <code>private static string GetXmlCommentsPath()<br />
+        {<br />
+          &nbsp;&nbsp;&nbsp;  return System.AppDomain.CurrentDomain.BaseDirectory + @"[<em>your XML file path</em>]";
+                <br />
+        }
 
-        <h2>Step 3: Activate the Object Recognition engine.</h2>
-
-        <p>Select&nbsp;<strong>Pick Object. </strong>Hover over your screen, and the UI Spy will pick up the individual objects</p>
-
-        <p style="text-align: center;">&nbsp;</p>
-
-        <h2>Step 4: Select your object.</h2>
-
-        <ol style="list-style-type:lower-alpha;">
-            <li>For a single object: Drop your object in the TestLeft UI Spy. You will now see a screenshot of the object, methods and property sources, and object tree of the object. Copy Identification and all the code all the identification code you will need to interact with the object.</li>
-        </ol>
-
-        <p style="text-align: center;">&nbsp;</p>
-
-        <ol style="list-style-type:lower-alpha;">
-            <li value="2">For the&nbsp;entire model: Select Copy Model in the TestLeft UI Spy. This will copy the&nbsp;all the models for the page.</li>
-        </ol>
-
-        <p style="text-align: center;">&nbsp;</p>
-
-        <h2>Step 5: Specify your criteria.</h2>
-
-        <p>You can choose your language, what you want to do with the driver or process, and adjust line breaks.</p>
-
-        <p style="text-align: center;">&nbsp;</p>
-
-        <h2>Step 6: Paste your code.</h2>
-
-        <p>It gives you browser, reference the website, and all identification code you will need to interact with the object. The code is also editable, so if there are additional identifiers you know of, you can add it in.</p>
-
-        <p style="text-align: center;"><img alt="" src="/SmartBear/media/images/product/TestLeft/TL-Step-7_1.png"></p>
+            </code><br /><br />
+            <img src="images/screen11.png"  style="width:600px"/>
+        </li>
+    </ol> 
+                Run your API, and navigate to your Swagger UI documentation. Your XML comments should now be displayed for each endpoint.<br />
+    <img src="images/screen12.png"  style="width:600px"/>
 
         <h2>Next Steps:</h2>
 
-        <p>TestLeft is an interface to an object recognition engine. It allows you to use your object recognition in your IDE of your choice such as&nbsp;Visual Studios, Eclipse, and IntelliJ. It&nbsp;allow you to interact with the application you are intending to test and quickly import identifiers for the object model of your application to your IDE and builds the code for you. There is no need for expansive searches, discovery of aspects of your DOM, and excess&nbsp;click.</p>
-
-        <p>Download a <a href="https://smartbear.com/product/testleft/free-trial/">30-day free-trial</a> to start scaling and extending your code today.</p>
-
-    </div>
+       <p>For troubleshooting installation issues and tips on how to integrate additional features, refer to the <a href="https://github.com/domaindrivendev/Swashbuckle" target="_blank">Swashbuckle README</a> on GitHub.com.</p>
+   <p>In addition to <a href="https://swagger.io/tools/swagger-ui/" target="_blank">Swagger UI</a>, SmartBear offers an entire suite of API Delivery and Testing tools. For a complete list of products, visit <a href="https://smartbear.com/" target="_blank">https://smartbear.com/</a>.</p>
+</div>
 </body>
 </html>

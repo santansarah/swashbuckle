@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\docs",
+    "\\SampleAPI",
+    "\\SampleAPI\\PetStore",
+    "\\SampleAPI\\PetStore\\Controllers",
+    "\\SampleAPI\\PetStore\\Models"
+  ],
+  "SelectedNode": "\\SampleAPI\\PetStore\\Controllers",
+  "PreviewInSolutionExplorer": false
+}
