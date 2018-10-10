@@ -3,4 +3,4 @@
 
 https://santansarah.github.io/swashbuckle/
 
-[YouTube Video - DRAFT](https://youtu.be/a4SlnioqOwY)
+[YouTube Video](https://youtu.be/HEzrczsk07E)
